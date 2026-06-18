@@ -6,13 +6,13 @@
 /*   By: andpascu <andpascu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 18:18:50 by andpascu          #+#    #+#             */
-/*   Updated: 2026/06/16 18:22:10 by andpascu         ###   ########.fr       */
+/*   Updated: 2026/06/18 23:28:34 by andpascu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*c(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t				i;
 	const unsigned char	*ptr;
