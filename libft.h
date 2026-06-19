@@ -6,7 +6,7 @@
 /*   By: andpascu <andpascu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 17:09:46 by apascual          #+#    #+#             */
-/*   Updated: 2026/06/17 01:04:19 by andpascu         ###   ########.fr       */
+/*   Updated: 2026/06/19 20:10:51 by andpascu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
 
 /* Parte 1 - Funciones de libc */
 
