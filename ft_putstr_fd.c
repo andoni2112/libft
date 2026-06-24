@@ -6,7 +6,7 @@
 /*   By: andpascu <andpascu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 00:52:17 by andpascu          #+#    #+#             */
-/*   Updated: 2026/06/17 00:52:38 by andpascu         ###   ########.fr       */
+/*   Updated: 2026/06/24 19:59:10 by andpascu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,9 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
+/* int	main(void)
+{
+	ft_putstr_fd("hola mundo", 1);
+	ft_putchar_fd('\n', 1);
+	return (0);
+} */

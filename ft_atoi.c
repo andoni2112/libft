@@ -6,7 +6,7 @@
 /*   By: andpascu <andpascu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 19:45:42 by andpascu          #+#    #+#             */
-/*   Updated: 2026/06/16 19:47:11 by andpascu         ###   ########.fr       */
+/*   Updated: 2026/06/24 19:52:52 by andpascu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,16 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
+/* #include <stdio.h>
+
+
+int	main(void)
+{
+	printf("42: %d\n", ft_atoi("42"));
+	printf("espacios: %d\n", ft_atoi("   -42"));
+	printf("mas: %d\n", ft_atoi("+123"));
+	printf("texto despues: %d\n", ft_atoi("123abc"));
+	printf("texto antes: %d\n", ft_atoi("abc123"));
+	printf("tabs: %d\n", ft_atoi("\t\n\v\f\r 55"));
+	return (0);
+} */

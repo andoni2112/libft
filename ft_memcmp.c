@@ -6,7 +6,7 @@
 /*   By: andpascu <andpascu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 19:21:46 by andpascu          #+#    #+#             */
-/*   Updated: 2026/06/16 19:29:34 by andpascu         ###   ########.fr       */
+/*   Updated: 2026/06/24 19:56:27 by andpascu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,17 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+/* #include <stdio.h>
+
+
+int	main(void)
+{
+	char	a[] = "abc";
+	char	b[] = "abc";
+	char	c[] = "abd";
+
+	printf("abc vs abc: %d\n", ft_memcmp(a, b, 3));
+	printf("abc vs abd: %d\n", ft_memcmp(a, c, 3));
+	printf("abc vs abd con n=2: %d\n", ft_memcmp(a, c, 2));
+	return (0);
+} */

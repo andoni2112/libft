@@ -6,7 +6,7 @@
 /*   By: andpascu <andpascu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 18:09:03 by andpascu          #+#    #+#             */
-/*   Updated: 2026/06/16 18:17:14 by andpascu         ###   ########.fr       */
+/*   Updated: 2026/06/24 19:57:01 by andpascu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,18 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
+/* #include <stdio.h>
+
+
+int	main(void)
+{
+	char	str1[20] = "abcdef";
+	char	str2[20] = "abcdef";
+
+	ft_memmove(str1 + 2, str1, 4);
+	printf("overlap derecha: %s\n", str1);
+	ft_memmove(str2, str2 + 2, 4);
+	str2[4] = '\0';
+	printf("overlap izquierda: %s\n", str2);
+	return (0);
+} */

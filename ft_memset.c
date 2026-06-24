@@ -6,7 +6,7 @@
 /*   By: andpascu <andpascu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 17:40:22 by andpascu          #+#    #+#             */
-/*   Updated: 2026/06/16 17:45:48 by andpascu         ###   ########.fr       */
+/*   Updated: 2026/06/24 19:57:31 by andpascu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,16 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
+/* #include <stdio.h>
+
+
+int	main(void)
+{
+	char	str[20] = "hola mundo";
+
+	ft_memset(str, 'X', 4);
+	printf("%s\n", str);
+	ft_memset(str + 5, '*', 5);
+	printf("%s\n", str);
+	return (0);
+} */

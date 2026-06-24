@@ -6,7 +6,7 @@
 /*   By: andpascu <andpascu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 00:39:01 by andpascu          #+#    #+#             */
-/*   Updated: 2026/06/17 00:39:32 by andpascu         ###   ########.fr       */
+/*   Updated: 2026/06/24 20:03:05 by andpascu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,3 +41,25 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	return (ft_substr(s1, start, end - start));
 }
+/* #include <stdio.h>
+
+
+int	main(void)
+{
+	char	*trim1;
+	char	*trim2;
+	char	*trim3;
+
+	trim1 = ft_strtrim("   hola mundo   ", " ");
+	trim2 = ft_strtrim("xx--hola--xx", "x-");
+	trim3 = ft_strtrim("aaaa", "a");
+	if (!trim1 || !trim2 || !trim3)
+		return (1);
+	printf("trim1: %s\n", trim1);
+	printf("trim2: %s\n", trim2);
+	printf("trim3: %s\n", trim3);
+	free(trim1);
+	free(trim2);
+	free(trim3);
+	return (0);
+} */

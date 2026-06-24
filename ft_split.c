@@ -6,7 +6,7 @@
 /*   By: andpascu <andpascu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 00:42:13 by andpascu          #+#    #+#             */
-/*   Updated: 2026/06/17 00:42:27 by andpascu         ###   ########.fr       */
+/*   Updated: 2026/06/24 19:59:33 by andpascu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,3 +98,37 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (ft_fill_split(split, s, c));
 }
+/* #include <stdio.h>
+
+
+static void	free_split(char **split)
+{
+	size_t	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}
+
+int	main(void)
+{
+	char	**split;
+	size_t	i;
+
+	split = ft_split("  hola   mundo  42 ", ' ');
+	if (!split)
+		return (1);
+	i = 0;
+	while (split[i])
+	{
+		printf("split[%zu]: %s\n", i, split[i]);
+		i++;
+	}
+	printf("split[%zu]: NULL\n", i);
+	free_split(split);
+	return (0);
+} */

@@ -6,7 +6,7 @@
 /*   By: andpascu <andpascu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 00:36:03 by andpascu          #+#    #+#             */
-/*   Updated: 2026/06/17 00:36:27 by andpascu         ###   ########.fr       */
+/*   Updated: 2026/06/24 20:00:54 by andpascu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,17 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	join[i + j] = '\0';
 	return (join);
 }
+/* #include <stdio.h>
+
+
+int	main(void)
+{
+	char	*join;
+
+	join = ft_strjoin("hola", " mundo");
+	if (!join)
+		return (1);
+	printf("%s\n", join);
+	free(join);
+	return (0);
+} */

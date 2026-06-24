@@ -6,7 +6,7 @@
 /*   By: andpascu <andpascu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 20:53:57 by andpascu          #+#    #+#             */
-/*   Updated: 2026/06/08 21:11:59 by andpascu         ###   ########.fr       */
+/*   Updated: 2026/06/24 20:01:11 by andpascu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
 }
+/* #include <stdio.h>
+
+
+int	main(void)
+{
+	char	dst1[20] = "hola";
+	char	dst2[8] = "hola";
+	size_t	ret1;
+	size_t	ret2;
+
+	ret1 = ft_strlcat(dst1, " mundo", sizeof(dst1));
+	ret2 = ft_strlcat(dst2, " mundo", sizeof(dst2));
+	printf("ret1: %zu, dst1: %s\n", ret1, dst1);
+	printf("ret2: %zu, dst2: %s\n", ret2, dst2);
+	return (0);
+} */

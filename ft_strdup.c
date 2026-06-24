@@ -6,7 +6,7 @@
 /*   By: andpascu <andpascu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 00:27:56 by andpascu          #+#    #+#             */
-/*   Updated: 2026/06/17 00:28:31 by andpascu         ###   ########.fr       */
+/*   Updated: 2026/06/24 20:00:15 by andpascu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,17 @@ char	*ft_strdup(const char *s1)
 	copy[i] = '\0';
 	return (copy);
 }
+/* #include <stdio.h>
+
+
+int	main(void)
+{
+	char	*copy;
+
+	copy = ft_strdup("hola mundo");
+	if (!copy)
+		return (1);
+	printf("copy: %s\n", copy);
+	free(copy);
+	return (0);
+} */
