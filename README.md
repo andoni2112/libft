@@ -1,12 +1,12 @@
-*Este proyecto ha sido creado como parte del currículo de 42 por andpascu.*
+*Este proyecto ha sido creado como parte del currículo de 42 por apascual.*
 
 # Libft
 
 ## Descripción
 
-Libft es el primer proyecto del Common Core de 42. El objetivo principal es crear una librería propia en C que reproduzca el comportamiento de varias funciones estándar de la libc, además de implementar funciones auxiliares para trabajar con strings, memoria dinámica, conversión de tipos y escritura en file descriptors.
+Libft es un proyecto del currículo de 42 cuyo objetivo es crear una librería propia en C. Esta librería reproduce el comportamiento de varias funciones estándar de la libc y añade funciones auxiliares para trabajar con strings, memoria, conversión de tipos, escritura en file descriptors y listas enlazadas.
 
-Este proyecto sirve para reforzar conceptos fundamentales del lenguaje C, como punteros, arrays, memoria, `malloc`, `free`, Makefiles, archivos de cabecera y compilación modular.
+El proyecto permite reforzar conceptos fundamentales del lenguaje C, como punteros, arrays, memoria dinámica, `malloc`, `free`, estructuras, punteros dobles, Makefiles, archivos de cabecera y compilación modular.
 
 La librería generada se llama:
 
@@ -14,13 +14,13 @@ La librería generada se llama:
 libft.a
 ```
 
-Esta librería puede ser reutilizada en futuros proyectos de 42.
+Esta librería puede reutilizarse en futuros proyectos de 42.
 
 ---
 
 ## Descripción detallada de la librería
 
-La librería contiene funciones divididas en varios bloques.
+La librería está organizada en varios bloques de funciones.
 
 ### Funciones de comprobación de caracteres
 
@@ -44,8 +44,8 @@ Estas funciones transforman caracteres:
 Estas funciones trabajan con cadenas de caracteres terminadas en `'\0'`:
 
 * `ft_strlen`: calcula la longitud de una string.
-* `ft_strchr`: busca la primera aparición de un carácter.
-* `ft_strrchr`: busca la última aparición de un carácter.
+* `ft_strchr`: busca la primera aparición de un carácter dentro de una string.
+* `ft_strrchr`: busca la última aparición de un carácter dentro de una string.
 * `ft_strncmp`: compara dos strings hasta un número máximo de caracteres.
 * `ft_strnstr`: busca una substring dentro de otra string con límite de longitud.
 * `ft_strlcpy`: copia una string en un buffer respetando su tamaño.
@@ -67,11 +67,11 @@ Estas funciones trabajan directamente con bloques de memoria:
 Estas funciones convierten entre tipos:
 
 * `ft_atoi`: convierte una string a un entero.
-* `ft_itoa`: convierte un entero a una string reservada con `malloc`.
+* `ft_itoa`: convierte un entero a una string reservada con memoria dinámica.
 
 ### Funciones con memoria dinámica
 
-Estas funciones crean nuevas strings usando memoria dinámica:
+Estas funciones crean nuevas strings o bloques de memoria usando `malloc`:
 
 * `ft_calloc`: reserva memoria e inicializa todos sus bytes a cero.
 * `ft_strdup`: duplica una string en memoria nueva.
@@ -98,11 +98,55 @@ Estas funciones escriben en un file descriptor:
 
 ---
 
+## Listas enlazadas
+
+Además de las funciones anteriores, la librería incluye funciones para trabajar con listas enlazadas simples.
+
+Una lista enlazada está formada por nodos. Cada nodo contiene un contenido genérico y un puntero al siguiente nodo.
+
+La estructura utilizada es:
+
+```c
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+```
+
+Cada nodo tiene dos partes:
+
+* `content`: guarda el contenido del nodo.
+* `next`: apunta al siguiente nodo de la lista o a `NULL` si es el último.
+
+Ejemplo visual:
+
+```text
+[nodo 1] -> [nodo 2] -> [nodo 3] -> NULL
+```
+
+### Funciones de listas enlazadas
+
+* `ft_lstnew`: crea un nuevo nodo.
+* `ft_lstadd_front`: añade un nodo al principio de una lista.
+* `ft_lstsize`: cuenta cuántos nodos tiene una lista.
+* `ft_lstlast`: devuelve el último nodo de una lista.
+* `ft_lstadd_back`: añade un nodo al final de una lista.
+* `ft_lstdelone`: elimina un solo nodo usando una función `del` para liberar su contenido.
+* `ft_lstclear`: elimina una lista completa y libera todos sus nodos.
+* `ft_lstiter`: recorre una lista y aplica una función a cada contenido.
+* `ft_lstmap`: crea una nueva lista aplicando una función a cada contenido de la lista original.
+
+Estas funciones permiten practicar estructuras, punteros a estructuras, punteros dobles, recorrido de listas, gestión de memoria y liberación correcta de recursos.
+
+---
+
 ## Estructura del proyecto
 
 ```text
 .
 ├── Makefile
+├── README.md
 ├── libft.h
 ├── ft_isalpha.c
 ├── ft_isdigit.c
@@ -137,14 +181,23 @@ Estas funciones escriben en un file descriptor:
 ├── ft_putchar_fd.c
 ├── ft_putstr_fd.c
 ├── ft_putendl_fd.c
-└── ft_putnbr_fd.c
+├── ft_putnbr_fd.c
+├── ft_lstnew_bonus.c
+├── ft_lstadd_front_bonus.c
+├── ft_lstsize_bonus.c
+├── ft_lstlast_bonus.c
+├── ft_lstadd_back_bonus.c
+├── ft_lstdelone_bonus.c
+├── ft_lstclear_bonus.c
+├── ft_lstiter_bonus.c
+└── ft_lstmap_bonus.c
 ```
 
 ---
 
 ## Instrucciones
 
-### Compilación
+### Compilar la parte principal
 
 Para compilar la librería:
 
@@ -156,6 +209,14 @@ Esto genera el archivo:
 
 ```bash
 libft.a
+```
+
+### Compilar con listas enlazadas
+
+Para compilar también las funciones de listas enlazadas:
+
+```bash
+make bonus
 ```
 
 ### Limpiar archivos objeto
@@ -221,6 +282,48 @@ Salida esperada:
 
 ---
 
+## Ejemplo de uso con listas enlazadas
+
+Ejemplo sencillo creando un nodo:
+
+```c
+#include "libft.h"
+#include <stdio.h>
+
+int	main(void)
+{
+	t_list	*node;
+
+	node = ft_lstnew("hola");
+	if (node == NULL)
+		return (1);
+	printf("%s\n", (char *)node->content);
+	free(node);
+	return (0);
+}
+```
+
+Compilación:
+
+```bash
+make bonus
+cc -Wall -Wextra -Werror main.c libft.a -o test
+```
+
+Ejecución:
+
+```bash
+./test
+```
+
+Salida esperada:
+
+```text
+hola
+```
+
+---
+
 ## Normas y restricciones
 
 El proyecto sigue las reglas de 42:
@@ -253,13 +356,13 @@ Recursos utilizados para estudiar y comprender los conceptos del proyecto:
   * `man free`
   * `man write`
 
-* Documentación y referencias:
+* Referencias clásicas:
 
   * The C Programming Language, Brian W. Kernighan y Dennis M. Ritchie.
   * GNU C Library Manual.
   * cppreference.com.
-  * Tutoriales y explicaciones sobre punteros, memoria dinámica y Makefiles en C.
-  * Documentación interna y subject del proyecto Libft de 42.
+  * Subject del proyecto Libft de 42.
+  * Tutoriales sobre punteros, memoria dinámica, estructuras, listas enlazadas y Makefiles en C.
 
 ### Uso de IA
 
@@ -267,19 +370,20 @@ Durante el proceso de estudio y desarrollo se han consultado herramientas de int
 
 El uso de IA se ha limitado a tareas de apoyo, como:
 
-* Explicación de conceptos relacionados con punteros, memoria dinámica, strings y Makefiles.
+* Explicación de conceptos relacionados con punteros, memoria dinámica, strings, estructuras, listas enlazadas y Makefiles.
 * Aclaración del comportamiento esperado de funciones de la librería estándar de C.
 * Revisión de errores de compilación y estilo.
 * Generación de ejemplos de prueba externos no incluidos en la entrega final.
 
 La implementación final, las pruebas, la integración en el repositorio y la validación del proyecto han sido realizadas por el autor.
 
-
 ---
 
 ## Estado del proyecto
 
-Parte obligatoria de Libft implementada.
+Parte principal de Libft implementada.
+
+Funciones de listas enlazadas implementadas.
 
 La librería puede compilarse con:
 
@@ -287,7 +391,13 @@ La librería puede compilarse con:
 make
 ```
 
-y utilizarse enlazando el archivo:
+y, si se quieren incluir las listas enlazadas:
+
+```bash
+make bonus
+```
+
+El resultado final es la librería:
 
 ```bash
 libft.a
