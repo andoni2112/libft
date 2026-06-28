@@ -24,8 +24,6 @@ La librería está organizada en varios bloques de funciones.
 
 ### Funciones de comprobación de caracteres
 
-Estas funciones analizan un carácter y devuelven si cumple una condición concreta:
-
 * `ft_isalpha`: comprueba si el carácter es una letra.
 * `ft_isdigit`: comprueba si el carácter es un número.
 * `ft_isalnum`: comprueba si el carácter es una letra o un número.
@@ -33,8 +31,6 @@ Estas funciones analizan un carácter y devuelven si cumple una condición concr
 * `ft_isprint`: comprueba si el carácter es imprimible.
 
 ### Funciones de conversión de caracteres
-
-Estas funciones transforman caracteres:
 
 * `ft_toupper`: convierte una letra minúscula a mayúscula.
 * `ft_tolower`: convierte una letra mayúscula a minúscula.
@@ -64,8 +60,6 @@ Estas funciones trabajan directamente con bloques de memoria:
 
 ### Funciones de conversión
 
-Estas funciones convierten entre tipos:
-
 * `ft_atoi`: convierte una string a un entero.
 * `ft_itoa`: convierte un entero a una string reservada con memoria dinámica.
 
@@ -82,14 +76,10 @@ Estas funciones crean nuevas strings o bloques de memoria usando `malloc`:
 
 ### Funciones de aplicación sobre strings
 
-Estas funciones aplican una función recibida por parámetro sobre una string:
-
 * `ft_strmapi`: crea una nueva string aplicando una función a cada carácter.
 * `ft_striteri`: aplica una función a cada carácter de una string modificándola directamente.
 
 ### Funciones de escritura en file descriptors
-
-Estas funciones escriben en un file descriptor:
 
 * `ft_putchar_fd`: escribe un carácter.
 * `ft_putstr_fd`: escribe una string.
@@ -100,7 +90,7 @@ Estas funciones escriben en un file descriptor:
 
 ## Listas enlazadas
 
-Además de las funciones anteriores, la librería incluye funciones para trabajar con listas enlazadas simples.
+La librería también incluye funciones para trabajar con listas enlazadas simples.
 
 Una lista enlazada está formada por nodos. Cada nodo contiene un contenido genérico y un puntero al siguiente nodo.
 
@@ -182,22 +172,22 @@ Estas funciones permiten practicar estructuras, punteros a estructuras, punteros
 ├── ft_putstr_fd.c
 ├── ft_putendl_fd.c
 ├── ft_putnbr_fd.c
-├── ft_lstnew_bonus.c
-├── ft_lstadd_front_bonus.c
-├── ft_lstsize_bonus.c
-├── ft_lstlast_bonus.c
-├── ft_lstadd_back_bonus.c
-├── ft_lstdelone_bonus.c
-├── ft_lstclear_bonus.c
-├── ft_lstiter_bonus.c
-└── ft_lstmap_bonus.c
+├── ft_lstnew.c
+├── ft_lstadd_front.c
+├── ft_lstsize.c
+├── ft_lstlast.c
+├── ft_lstadd_back.c
+├── ft_lstdelone.c
+├── ft_lstclear.c
+├── ft_lstiter.c
+└── ft_lstmap.c
 ```
 
 ---
 
 ## Instrucciones
 
-### Compilar la parte principal
+### Compilación
 
 Para compilar la librería:
 
@@ -209,14 +199,6 @@ Esto genera el archivo:
 
 ```bash
 libft.a
-```
-
-### Compilar con listas enlazadas
-
-Para compilar también las funciones de listas enlazadas:
-
-```bash
-make bonus
 ```
 
 ### Limpiar archivos objeto
@@ -306,7 +288,7 @@ int	main(void)
 Compilación:
 
 ```bash
-make bonus
+make
 cc -Wall -Wextra -Werror main.c libft.a -o test
 ```
 
@@ -381,7 +363,7 @@ La implementación final, las pruebas, la integración en el repositorio y la va
 
 ## Estado del proyecto
 
-Parte principal de Libft implementada.
+Funciones principales de Libft implementadas.
 
 Funciones de listas enlazadas implementadas.
 
@@ -391,13 +373,7 @@ La librería puede compilarse con:
 make
 ```
 
-y, si se quieren incluir las listas enlazadas:
-
-```bash
-make bonus
-```
-
-El resultado final es la librería:
+El resultado final es:
 
 ```bash
 libft.a
