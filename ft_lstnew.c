@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: andpascu <andpascu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/25 19:04:44 by apascual          #+#    #+#             */
-/*   Updated: 2026/06/28 18:56:33 by andpascu         ###   ########.fr       */
+/*   Created: 2026/06/30 19:41:34 by andpascu          #+#    #+#             */
+/*   Updated: 2026/06/30 19:41:42 by andpascu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,3 @@ t_list	*ft_lstnew(void *content)
 // 	printf("content: %s\n", (char *)node->content);
 // 	printf("next: %p\n", node->next);
 // 	free(node);
-// 	return (0);
-// }
