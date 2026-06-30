@@ -6,7 +6,7 @@
 #    By: andpascu <andpascu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/17 00:57:28 by andpascu          #+#    #+#              #
-#    Updated: 2026/06/28 19:29:20 by andpascu         ###   ########.fr        #
+#    Updated: 2026/07/01 00:11:48 by andpascu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+RM = rm -f
 
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strlen.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c \
@@ -23,9 +24,9 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
-	ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
-	ft_lstclear.c ft_lstiter.c ft_lstmap.c
+BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+	ft_lstmap.c
 
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
@@ -42,10 +43,10 @@ bonus: $(OBJ) $(BONUS_OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ)
+	$(RM) $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
